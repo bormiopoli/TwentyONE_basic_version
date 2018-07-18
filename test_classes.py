@@ -1,7 +1,8 @@
 import unittest
 from classes import Bank, Table, Player
 
-class rulesTest(unittest.TestCase):
+
+class ClassesTest(unittest.TestCase):
     """Tests for `classes.py`."""
 
     def test_Bank(self):
@@ -20,9 +21,9 @@ class rulesTest(unittest.TestCase):
         self.assertIsNone(Player().action)
 
     def test_Table(self):
-        self.assertEqual(Table().players,[])
-        self.assertEqual(Table().id,0)
-        self.assertEqual(Table().hand,[])
+        self.assertEqual(Table().players, [])
+        self.assertEqual(Table().id, 0)
+        self.assertEqual(Table().hand, [])
 
 
 if __name__ == '__main__':

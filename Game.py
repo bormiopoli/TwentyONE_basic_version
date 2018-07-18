@@ -1,6 +1,6 @@
 
 from table_schedule import create_tables
-from rules import bankpick,finish,remove_card, sum_points
+from rules import bankpick, finish, remove_card, sum_points
 from rules import card_value, check_tables, pick_card, check_limit, bank_check, check_score
 
 
@@ -14,8 +14,6 @@ def first_pick(tab):
         play.points = sum_points(add_points, play.points)
         print(play.name)
         print(play.cards, play.points)
-
-
 
 
 def second_pick(tab):
@@ -81,7 +79,7 @@ def last_pick(tab):
 
 if __name__ == '__main__':
     while True:
-        i=0  # NR OF TABLE PLAYING
+        i = 0  # NR OF TABLE PLAYING
         players = []
         num = ""
         while True:
@@ -108,7 +106,7 @@ if __name__ == '__main__':
         for table in tables:
             while True:
                 define_action(table)
-                p=[]
+                p = []
                 for player in table.players:
                     if "Pass" in player.action:
                         p.append("Pass")
@@ -125,7 +123,7 @@ if __name__ == '__main__':
             for winner in winners:
                 print("Player {0} won with SCORE: {1} and CARDS: {2} ".format(winner.name, winner.points, winner.cards))
 
-        print("Do you want to play again ?  [Yes] = <Yes> otherwise any key = <No> ")
+        print("Do you want to play again ?  <Yes> For yes or any other key to exit ")
         inp = input()
         if "Yes" not in inp:
             break
