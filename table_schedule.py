@@ -2,6 +2,8 @@ from classes import Table, Bank, Player, Deck
 from rules import shuffle_cards
 
 
+# THIS FUNCTION CREATE TABLES ACCORDING TO THE NR OF PLAYER BY ARITHMETIC // AND % OPERATORS FOR REMINDER AND QUOTIENT
+
 def create_tables(num_of_tables, num):
     tables = []
     i = 0
@@ -79,20 +81,4 @@ def create_tables(num_of_tables, num):
             tables.append(table)
             i = i + 1
 
-        # else:
-        #     table = Table()
-        #     bank = Bank()
-        #     for j in range(num % 3):
-        #         print("Insert the name of player {}".format(i*3 + j + 1))
-        #         name = input()
-        #         player = Player()
-        #         player.name = name
-        #         table.players.append(player)
-        #     table.hand = shuffle_cards()
-        #     table.id = i + 1
-        #     bank.name = "Bank"
-        #     bank.status = False
-        #     table.bank = bank
-        #     tables.append(table)
-        #     i = i + 1
     return tables

@@ -2,6 +2,9 @@ import random
 from classes import Deck
 
 
+# THIS FUNCTION CHECK THE VALUE OF A CARD AND ASK FOR USER IN CASE CARD IS "A"
+
+
 def card_value(card):
     if card is "A":
         while True:
@@ -27,6 +30,9 @@ def card_value(card):
         return val
 
 
+# THIS FUNCTION CHECK HOW MANY TABLES ARE NEEDED TO FIT num NR OF PLAYERS
+
+
 def check_tables(num):
     if num % 3 == 0:
         num_of_tables = num//3
@@ -37,19 +43,27 @@ def check_tables(num):
         return num_of_tables
 
 
+# THIS FUNCTION PICK CARD FROM AN HAND
+
 def pick_card(hand):
     picked = random.sample(hand, 1)
     return picked[0]
 
+
+# THIS FUNCTION RETURN A SIMPLE SUM
 
 def sum_points(points_to_add, points_of_player):
     new_points = int(points_of_player) + int(points_to_add)
     return new_points
 
 
+# THIS FUNCTION RETURN A SIMPLE SUBTRACTION
+
 def subtract_points(points_to_subtract, points_of_deck):
     new_points = int(points_of_deck) - int(points_to_subtract)
     return new_points
+
+# THIS FUNCTION RETURN AN HAND OF CARDS
 
 
 def shuffle_cards():
@@ -58,6 +72,8 @@ def shuffle_cards():
             "J", "J", "Q", "Q", "Q", "Q", "K", "K", "K", "K", ]
 
     return hand
+
+# THIS FUNCTION REMOVE A CARD FROM ITS HAND
 
 
 def remove_card(hand, card):
@@ -68,6 +84,8 @@ def remove_card(hand, card):
         print(exc)
         return False
 
+# THIS FUNCTION CHECK THE LIMIT OF A DECK
+
 
 def check_limit(deck):
     if deck.points > 21:
@@ -75,11 +93,15 @@ def check_limit(deck):
         return True
     return False
 
+# THIS FUNCTION CHECK IF THE BANK AS TO PICK OR STAY
+
 
 def bank_check(_table):
     if _table.bank.points < 17:
         return True
     return False
+
+# THIS FUNCTION MAKE THE BANK PICK
 
 
 def bankpick(table):
@@ -89,6 +111,8 @@ def bankpick(table):
     print("Bank at table {0} have {1} points".format(table.id, table.bank.points))
     print("Bank at table {0} have cards: {1}".format(table.id, table.bank.cards))
     return True
+
+# THIS FUNCTION CHECK IF GAME IS NOT FINISHED
 
 
 def finish(table):
@@ -100,6 +124,8 @@ def finish(table):
         return True
     return False
 
+# THIS FUNCTION CHECK WHO WIN COMPARING POINTS OF BANK AND PLAYERS
+
 
 def check_score(table):
     bank_p = table.bank.points
@@ -108,6 +134,8 @@ def check_score(table):
         if ((deck.points <= 21) and (deck.points > bank_p)) or bank_p > 21:
             winners.append(deck)
     return winners
+
+# THIS FUNCTION CHECK IF DECK CAN SPLIT
 
 
 def check_split(dck):
@@ -133,6 +161,8 @@ def check_split(dck):
 
     return cards_can_split, decks_can_split
 
+# THIS FUNCTION SPLIT CARDS AND CREATE A NEW DECK
+
 
 def split_cards(card, deck):
     if deck.split is False:
@@ -147,6 +177,8 @@ def split_cards(card, deck):
         deck.split = True
         return new_deck
     return None
+
+# THIS FUNCTION IS USED TO MANAGE DIFFERENT MINORITY CASES OF CARD SPLITTING
 
 
 def split(deck):
@@ -176,6 +208,8 @@ def split(deck):
     if len(decks_can_split) is 0:
         print("This _deck has no same cards to split")
 
+# THIS FUNCTION MAKE THE LAST PICK RUSHES
+
 
 def last_pick(deck, card):
     if "Hit" in deck.action:
@@ -183,6 +217,8 @@ def last_pick(deck, card):
         add_points = card_value(card)
         deck.points = sum_points(add_points, deck.points)
     print(deck.player, deck.cards, deck.points)
+
+# THIS FUNCTION MAKE USER INSERT THEIR ACTIONS
 
 
 def define_action(deck):
@@ -194,6 +230,8 @@ def define_action(deck):
             return deck.action
         print("No valid action, user is going to pass...")
         return "Pass"
+
+# THIS FUNCTION MAKE THE FIRST PICK OR TURN
 
 
 def first_pick(tab):
@@ -210,6 +248,8 @@ def first_pick(tab):
 
 # This function allow each player of a table to pick a card from the same hand,
 # it then updates the cards and points of each player and display stats
+
+# THIS FUNCTION MAKE THE FIRST BET
 
 
 def first_bet(tab):

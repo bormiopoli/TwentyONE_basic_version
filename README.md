@@ -30,10 +30,10 @@ Note that the game cards are pre-shuffled and that there cannot be more than 3 p
 Players grouped by 3 are assigned to each table. Spare players (reminder of division of <num> mod <3>, are inserted in the last table.
 
 
-FEATURES TO FURTHER DEVELOP:
+FURTHER FEATURES:
 
-Split functionality is not yet implemented. Graphic interface is only through command line. Unit-Tests have been made for most indipendent functions.
-
+IF ALL PLAYER PASS, THEN BANK PICKS AND GAME GOES TO THE POINTS
+BANK CANNOT SPLIT
 
 
 
