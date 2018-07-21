@@ -49,12 +49,12 @@ if __name__ == '__main__':
         # LOOP UNTIL NO DECKS LEFT OR UNTIL ALL DECKS PASSED
 
         for table in tables:
-            while len(table.decks) >= 0 and finish(table) is False:
+            while len(table.decks) > 0 and finish(table) is False:
                 p = []
                 for deck in table.decks:
-                    # if check_limit(deck) is True:
-                    #     table.decks.remove(deck)
-                    #     continue
+                    if check_limit(deck) is True:
+                        table.decks.remove(deck)
+                        continue
                     deck.action = define_action(deck)
                     if "Pass" in deck.action:
                         p.append(1)
@@ -69,7 +69,6 @@ if __name__ == '__main__':
                         last_pick(deck, card)
 
                     if check_limit(deck) is True:
-                        table.decks.remove(deck)
                         print("Player {0} is out of game".format(deck.player))
                         continue
 
