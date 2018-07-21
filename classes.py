@@ -13,14 +13,8 @@ class Player(object):
 
     def __init__(self):
         self.name = "No name"
-        self.cards = []
-        self.points = 0
-        self.balance = 0
         self.status = False
-        self.action = None
-
-    def bet(self, amount):
-        self.balance = int(self.balance) + int(amount)
+        self.decks = []
 
 
 class Table(object):
@@ -29,4 +23,16 @@ class Table(object):
         self.players = []
         self.id = 0
         self.hand = []
+        self.decks = []
+
+
+class Deck(object):
+
+    def __init__(self):
+        self.cards = []
+        self.points = 0
+        self.status = False
+        self.split = False
+        self.action = None
+
 

@@ -2,7 +2,7 @@ TWENTYONE BASIC IMPLEMENTATION WITH COMMAND LINE INTERFACE
 
 HOW TO RUN:
 
-The code requires a Python interpreter (3.6) or similar. Once installed the python interpreter, the code can be executed through command line, by executing the file "Game.py":
+The code requires a Python interpreter (3.6) or lower. Once installed the python interpreter, the code can be executed by executing the file "Game.py" from the command line at the same location of where the file is located:
 
 python Game.py
 

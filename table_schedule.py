@@ -1,4 +1,4 @@
-from classes import Table, Bank, Player
+from classes import Table, Bank, Player, Deck
 from rules import shuffle_cards
 
 
@@ -15,6 +15,8 @@ def create_tables(num_of_tables, num):
                     name = input()
                     player = Player()
                     player.name = name
+                    deck = Deck()
+                    player.decks.append(deck)
                     table.players.append(player)
                 table.hand = shuffle_cards()
                 table.id = i + 1
@@ -31,6 +33,8 @@ def create_tables(num_of_tables, num):
                     name = input()
                     player = Player()
                     player.name = name
+                    deck = Deck()
+                    player.decks.append(deck)
                     table.players.append(player)
                 table.hand = shuffle_cards()
                 table.id = i + 1
@@ -47,6 +51,8 @@ def create_tables(num_of_tables, num):
                     name = input()
                     player = Player()
                     player.name = name
+                    deck = Deck()
+                    player.decks.append(deck)
                     table.players.append(player)
                 table.hand = shuffle_cards()
                 table.id = i + 1
@@ -62,6 +68,8 @@ def create_tables(num_of_tables, num):
                 name = input()
                 player = Player()
                 player.name = name
+                deck = Deck()
+                player.decks.append(deck)
                 table.players.append(player)
             table.hand = shuffle_cards()
             table.id = i + 1
